@@ -88,7 +88,7 @@ export default async function DashboardPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="text-2xl font-bold mb-1">984</div>
-                    <p className="text-xs text-muted-foreground">
+                    <p className="text-xs text-white font-bold">
                       +20.1% from last month
                     </p>
                   </CardContent>
@@ -115,7 +115,7 @@ export default async function DashboardPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="text-2xl font-bold mb-1">251</div>
-                    <p className="text-xs text-muted-foreground">
+                    <p className="text-xs text-white font-bold">
                       +180.1% from last month
                     </p>
                   </CardContent>
@@ -141,7 +141,7 @@ export default async function DashboardPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="text-2xl font-bold mb-1">152</div>
-                    <p className="text-xs text-muted-foreground">
+                    <p className="text-xs text-white font-bold">
                       +19% from last month
                     </p>
                   </CardContent>
@@ -166,7 +166,7 @@ export default async function DashboardPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="text-2xl font-bold mb-1">622</div>
-                    <p className="text-xs text-muted-foreground">
+                    <p className="text-xs text-white font-bold">
                       +201 since last hour
                     </p>
                   </CardContent>

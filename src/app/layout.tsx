@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 
-import { fontSans } from "@/lib/fonts";
+// import { fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { Analytics } from "@/components/vercel-analytics";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import UserProvider from "@/components/user-provider";
 import Script from "next/script";
+import { DM_Sans } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "NPS",
@@ -16,6 +17,12 @@ export const metadata: Metadata = {
 interface RootLayoutProps {
   children: React.ReactNode;
 }
+
+const fontSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  weight: ["500"],
+});
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
