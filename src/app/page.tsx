@@ -36,30 +36,12 @@ export default async function DashboardPage() {
     } = await supabase.auth.getSession();
 
     if (session) loggedIn = true;
-  } catch (err) {
-    console.log("home", err);
   } finally {
     if (!loggedIn) redirect("/sign-in");
   }
 
   return (
     <>
-      <div className="bg md:hidden">
-        <Image
-          src="/examples/dashboard-light.png"
-          width={1280}
-          height={866}
-          alt="Dashboard"
-          className="block dark:hidden"
-        />
-        <Image
-          src="/examples/dashboard-dark.png"
-          width={1280}
-          height={866}
-          alt="Dashboard"
-          className="hidden dark:block"
-        />
-      </div>
       <div className="hidden flex-col md:flex">
         <div className="border-b">
           <div className="flex h-16 items-center px-4">
@@ -77,7 +59,7 @@ export default async function DashboardPage() {
             <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
             <div className="flex items-center space-x-2">
               <CalendarDateRangePicker />
-              <Button>Download</Button>
+              <Button>Search</Button>
             </div>
           </div>
           <Tabs defaultValue="overview" className="space-y-4">
@@ -88,11 +70,9 @@ export default async function DashboardPage() {
             </TabsList>
             <TabsContent value="overview" className="space-y-4">
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-                <Card>
+                <Card className="bg-[#2e2d4b] text-white">
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <CardTitle className="text-sm font-medium">
-                      Total Revenue
-                    </CardTitle>
+                    <CardTitle className="text-lg font-bold">Replies</CardTitle>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
@@ -107,16 +87,16 @@ export default async function DashboardPage() {
                     </svg>
                   </CardHeader>
                   <CardContent>
-                    <div className="text-2xl font-bold">$45,231.89</div>
+                    <div className="text-2xl font-bold mb-1">984</div>
                     <p className="text-xs text-muted-foreground">
                       +20.1% from last month
                     </p>
                   </CardContent>
                 </Card>
-                <Card>
+                <Card className="bg-[#d47151] text-white">
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <CardTitle className="text-sm font-medium">
-                      Subscriptions
+                    <CardTitle className="text-lg font-bold">
+                      Detractors
                     </CardTitle>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -134,15 +114,17 @@ export default async function DashboardPage() {
                     </svg>
                   </CardHeader>
                   <CardContent>
-                    <div className="text-2xl font-bold">+2350</div>
+                    <div className="text-2xl font-bold mb-1">251</div>
                     <p className="text-xs text-muted-foreground">
                       +180.1% from last month
                     </p>
                   </CardContent>
                 </Card>
-                <Card>
+                <Card className="bg-[#debe6b] text-white">
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <CardTitle className="text-sm font-medium">Sales</CardTitle>
+                    <CardTitle className="text-lg font-bold">
+                      Neutrals
+                    </CardTitle>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
@@ -158,16 +140,16 @@ export default async function DashboardPage() {
                     </svg>
                   </CardHeader>
                   <CardContent>
-                    <div className="text-2xl font-bold">+12,234</div>
+                    <div className="text-2xl font-bold mb-1">152</div>
                     <p className="text-xs text-muted-foreground">
                       +19% from last month
                     </p>
                   </CardContent>
                 </Card>
-                <Card>
+                <Card className="bg-[#4c8b83] text-white">
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <CardTitle className="text-sm font-medium">
-                      Active Now
+                    <CardTitle className="text-lg font-bold">
+                      Promoters
                     </CardTitle>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -183,7 +165,7 @@ export default async function DashboardPage() {
                     </svg>
                   </CardHeader>
                   <CardContent>
-                    <div className="text-2xl font-bold">+573</div>
+                    <div className="text-2xl font-bold mb-1">622</div>
                     <p className="text-xs text-muted-foreground">
                       +201 since last hour
                     </p>

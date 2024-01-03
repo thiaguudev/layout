@@ -16,7 +16,6 @@ import { useUser } from "./user-provider";
 
 export function UserNav() {
   const { handleSignOut, user } = useUser();
-  console.log("UserNav", user);
 
   return (
     <DropdownMenu>
@@ -31,9 +30,11 @@ export function UserNav() {
       <DropdownMenuContent className="w-56" align="end" forceMount>
         <DropdownMenuLabel className="font-normal">
           <div className="flex flex-col space-y-1">
-            <p className="text-sm font-medium leading-none">shadcn</p>
+            <p className="text-sm font-medium leading-none">
+              {user.user_metadata.name}
+            </p>
             <p className="text-xs leading-none text-muted-foreground">
-              user.email
+              {user.email}
             </p>
           </div>
         </DropdownMenuLabel>
@@ -42,10 +43,6 @@ export function UserNav() {
           <DropdownMenuItem>
             Profile
             <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            Billing
-            <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
           </DropdownMenuItem>
           <DropdownMenuItem>
             Settings

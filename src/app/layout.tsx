@@ -8,8 +8,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 import UserProvider from "@/components/user-provider";
 
 export const metadata: Metadata = {
-  title: "Up for love",
-  description: "My first micro saas",
+  title: "NPS",
+  description: "NPS",
 };
 
 interface RootLayoutProps {
@@ -23,7 +23,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
+          fontSans.className
         )}
       >
         <ThemeProvider
