@@ -20,7 +20,6 @@ import { UserNav } from "@/components/user-nav";
 import { RecentSales } from "@/components/recent-sales";
 import { Overview } from "@/components/overview";
 import { ModeToggle } from "@/components/mode-toggle";
-import TeamSwitcher from "@/components/team-switcher";
 
 export const metadata: Metadata = {
   title: "Dashboard",
